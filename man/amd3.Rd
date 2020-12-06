@@ -39,9 +39,7 @@ other_unknown = Other ethnic group or unknown)}
 \url{https://doi.org/10.5061/dryad.9cnp5hqfm}
 }
 \usage{
-data("amd10y")
-
-data("amd")
+data("amd3")
 }
 \description{
 Ten Year Survival Trends of Neovascular Age Related Macular Degeneration

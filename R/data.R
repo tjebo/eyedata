@@ -264,8 +264,7 @@
 #' Information governance authorised Moorfields Eye Clinic 19/07/2018.
 #' Age not provided as a continuous variable as in original analysis
 #' to facilitate de-identification
-#' @usage data("amd10y")
-#' @usage data("amd")
+#' @usage data("amd3")
 #' @format A data frame (tibble) with 6696 rows and 23 variables:
 #' \describe{
 #'   \item{patID}{Anonymized patient identifier.}

@@ -16,20 +16,20 @@ UK ETHNIC CATEGORY CODE 2001. (asian = Asian or Asian British,
 white = White, black = Black or Black British,
 other_unknown = Other ethnic group or unknown)}
 \item{fellow}{fellow eye requires anti-VEGF within observation period}
-\item{ttofellow_mo}{time between baseline and fellow eye involvement in months}
+\item{ttofellow}{time between baseline and fellow eye involvement in months}
 \item{drug_switch}{anti-VEGF drug agent is switched during observation period }
-\item{ttodrugswitch_mo}{time between baseline and date of drug switch in months}
+\item{ttodrugswitch}{time between baseline and date of drug switch in months}
 \item{ltfu}{patient is lost to follow-up during observation period }
 \item{ltfu_stable}{of those lost to follow-up, are they stable prior to this timepoint }
 \item{ltfu_outcome}{reason for lost to follow-up (discharged, dna (did not attend last appointment), dead, transferred)}
-\item{ttoltfu_mo}{time between baseline and loss to follow-up in months}
+\item{ttoltfu}{time between baseline and loss to follow-up in months}
 \item{ten_y_stable}{patient is stable at ten year timepoint }
 \item{irf}{presence of intraretinal fluid at last visit }
 \item{srf}{presence of subretinal fluid at last visit }
 \item{disciform}{presence of disciform scar at last visit (0 = no, 1a = type 1a, 1b = type 1b)}
 \item{ga}{presence of geographic atrophy at last visit  }
 \item{ga_foveal}{presence of foveal geographic atrophy at last visit}
-\item{ttoga_mo}{time to geographic atrophy development in months}
+\item{ttoga}{time to geographic atrophy development in months}
 \item{inj_num}{injection number}
 \item{va}{visual acuity in Early Treatment Diabetic Retinopathy Study letters}
 \item{crt}{foveal thickness in microns}
@@ -45,9 +45,20 @@ data("amd3")
 Ten Year Survival Trends of Neovascular Age Related Macular Degeneration
 at First Presentation
 }
+\section{Central retinal thickness (CRT)}{
+
+There are double CRT measurements for 1011 time points. This is because the
+data set curator provided both automatic measurement and manual measurement.
+Unfortunately, based on the information in the raw data, it is not possible
+to know which entry belongs to which. One possible way to adjust for this may
+be to create an average for both measurements. For one way to do this, see
+"Examples"
+}
+
 \section{Missing values}{
 
-To be added
+There are 1388 missing visual acuity entries and 858 missing central retinal
+thickness entries.
 }
 
 \section{Study setting and design}{
@@ -67,6 +78,14 @@ Age not provided as a continuous variable as in original analysis
 to facilitate de-identification
 }
 
+\examples{
+library(dplyr)
+amd3 \%>\%
+  group_by(patID, time) \%>\%
+  mutate(crt_av = mean(crt, na.rm = TRUE)) \%>\%
+  select(-crt) \%>\%
+  distinct()
+}
 \seealso{
 Scientific article to which this data set was supplement:
 \url{https://doi.org/10.1136/bjophthalmol-2020-317161}

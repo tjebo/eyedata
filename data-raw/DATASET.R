@@ -26,8 +26,10 @@ amd <-
          pre2013 = if_else(date_inj1 == "Pre-2013", 1, 0),
          regimen = if_else(regimen == "Ranabizumab only", "ranibizumab", "aflibercept"),
          injgiven = !is.na(injgiven),
+         age_group = factor(age_group, levels = c( "50-59", "60-69", "70-79",">80")),
          across(where(function(x) all(unique(x) %in% 0:1)), as.logical)) %>%
-  select(patID = anon_id, sex = gender, age = age_group, avdays_induc = mean_inj_interval,
+  select(patID = anon_id, sex = gender, age = age_group,
+         avdays_induc = mean_inj_interval,
          everything(), -starts_with("X"), -contains("inj1"), -injnum) %>%
   arrange(patID, time) %>%
   mutate(patID = as.character(paste0("id_", patID)))
@@ -37,6 +39,7 @@ lu_eth_amd <- c("asian", "caucasian", "unknown_other", "afrocarribean", "mixed" 
 names(lu_eth_amd) <- unique(amd$ethnicity)
 amd$ethnicity <- lu_eth_amd[amd$ethnicity]
 
+amd <- tidyr::as_tibble(amd)
 usethis::use_data(amd, overwrite = TRUE)
 
 
@@ -71,9 +74,8 @@ names(lu_eth_amd) <- unique(amdoct$ethnicity)
 amdoct$ethnicity <- lu_eth_amd[amdoct$ethnicity]
 amdoct$patID <- paste("id", amdoct$patID, sep = "_")
 amdoct <- as_tibble(amdoct)
-usethis::use_data(amdoct, overwrite = TRUE)
 
-
+amdoct <- tidyr::as_tibble(amdoct)
 usethis::use_data(amdoct, overwrite = TRUE)
 
 
@@ -113,15 +115,19 @@ amd3_raw$anon_id <- paste0("id_", as.integer(as.factor(amd3_raw$anon_id)))
 amd3<-
   amd3_raw %>%
   select(patID = anon_id, sex = gender, time = ttoinj_d,
-         everything(),
-         -va_inj1, -va_lastvisit, -crt_inj1,-crt_lastvisit,-X, -inj_given) %>%
+         everything(), stable10y = ten_y_stable, injgiven = inj_given,
+         -va_inj1, -va_lastvisit, -crt_inj1,-crt_lastvisit,-X, -inj_num) %>%
   mutate(sex = if_else(sex == "Male", "m", "f"),
+         injgiven = !is.na(injgiven),
+         ltfu_outcome = if_else(ltfu_outcome == "", NA_character_, ltfu_outcome),
          across(where(function(x) all(unique(x) %in% 0:1)), as.logical))
 
+names(amd3) <- gsub("_mo","",names(amd3))
 ## replacing implausible ETDRS values with NA and simplifying ethnicity codes
 
-lu_eth_amd3 <- c("white", "other",  "unknown","asian",  "mixed")
+lu_eth_amd3 <- c("white", "unknown" ,"asian",  "mixed", "other")
 names(lu_eth_amd3) <- unique(amd3$ethnicity)
 amd3$ethnicity <- lu_eth_amd3[amd3$ethnicity]
 
+amd3 <- tidyr::as_tibble(amd3)
 usethis::use_data(amd3, overwrite = TRUE)

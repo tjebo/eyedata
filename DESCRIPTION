@@ -1,0 +1,24 @@
+Package: eyedata
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "First",
+           family = "Last",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package collates open source ophthalmic data sets curated for
+    direct use in R. This is real life data of people with intravitreal 
+    injections with anti-vascular endothelial growth factor (anti-VEGF), due to
+    age-related macular degeneration 
+    [Fu et al. (2020) <doi:10.1001/jamaophthalmol.2020.5044>, 
+    Moraes et al (2020). <doi:10.1016/j.ophtha.2020.09.025>,
+    Fasler et al. (2019) <doi:10.1136/bmjopen-2018-027441>, 
+    Arpa et al. (2020) <doi:10.5061/dryad.9cnp5hqfm>] or diabetic macular
+    edema (Kern et al. 2020, <doi:10.1038/s41433-020-1048-0>)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: R (>= 4.0)

@@ -291,14 +291,14 @@
 #'   \item{ltfu_stable}{of those lost to follow-up, are they stable prior to this timepoint }
 #'   \item{ltfu_outcome}{reason for lost to follow-up (discharged, dna (did not attend last appointment), dead, transferred)}
 #'   \item{ttoltfu}{time between baseline and loss to follow-up in months}
-#'   \item{ten_y_stable}{patient is stable at ten year timepoint }
+#'   \item{stable10y}{patient is stable at ten year timepoint }
 #'   \item{irf}{presence of intraretinal fluid at last visit }
 #'   \item{srf}{presence of subretinal fluid at last visit }
 #'   \item{disciform}{presence of disciform scar at last visit (0 = no, 1a = type 1a, 1b = type 1b)}
 #'   \item{ga}{presence of geographic atrophy at last visit  }
 #'   \item{ga_foveal}{presence of foveal geographic atrophy at last visit}
 #'   \item{ttoga}{time to geographic atrophy development in months}
-#'   \item{inj_num}{injection number}
+#'   \item{injgiven}{injection given (TRUE) or not given (FALSE)}
 #'   \item{va}{visual acuity in Early Treatment Diabetic Retinopathy Study letters}
 #'   \item{crt}{foveal thickness in microns}
 #'   }

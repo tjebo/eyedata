@@ -1,12 +1,11 @@
 Package: eyedata
-Title: What the Package Does (One Line, Title Case)
+Title: Open source ophthalmic data sets curated for R
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
+Authors@R: c(
+    person("Tjebo", "Heeren",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "tjebo@gmx.de",
+           comment = c(ORCID = "0000-0001-5297-2301")))
 Description: This package collates open source ophthalmic data sets curated for
     direct use in R. This is real life data of people with intravitreal 
     injections with anti-vascular endothelial growth factor (anti-VEGF), due to
@@ -18,6 +17,8 @@ Description: This package collates open source ophthalmic data sets curated for
     Arpa et al. (2020) <doi:10.5061/dryad.9cnp5hqfm>,
     Kern et al. 2020, <doi:10.1038/s41433-020-1048-0>.
 License: MIT + file LICENSE
+URL: https://github.com/tjebo/eyedata
+BugReports: https://github.com/tjebo/eyedata/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

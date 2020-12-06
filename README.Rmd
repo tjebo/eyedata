@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.com/tjebo/eyedata.svg?branch=master)](https://travis-ci.com/tjebo/eyedata)
 <!-- badges: end -->
 
 Contains open access ophthalmic data sets, curated for the use in R.

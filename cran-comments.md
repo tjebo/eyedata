@@ -1,3 +1,6 @@
+## Re-submission
+changed description field in DESCRIPTION file. 
+
 ## Test environments
 * local R installation, R 4.0.2
 * ubuntu 16.04 (on travis-ci), R 4.0.2

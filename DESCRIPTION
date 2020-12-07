@@ -9,11 +9,11 @@ Authors@R: c(
            person("Dun Jack", "Fu",
            role = c("aut"),
            comment = c(ORCID = "0000-0003-2852-6912")))
-Description: This package collates open source ophthalmic data sets curated for
-    direct use in R. This is real life data of people with intravitreal 
-    injections with anti-vascular endothelial growth factor (anti-VEGF), due to
-    age-related macular degeneration or diabetic macular edema.
-    Associated publications of the data sets: 
+Description: The purpose of this package is to collate open source ophthalmic 
+    data sets curated for direct use in R. This is real life data of people with
+    intravitreal  injections with anti-vascular endothelial growth factor 
+    (anti-VEGF), due to age-related macular degeneration or diabetic 
+    macular edema. Associated publications of the data sets: 
     Fu et al. (2020) <doi:10.1001/jamaophthalmol.2020.5044>, 
     Moraes et al (2020) <doi:10.1016/j.ophtha.2020.09.025>,
     Fasler et al. (2019) <doi:10.1136/bmjopen-2018-027441>, 

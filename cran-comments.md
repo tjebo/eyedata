@@ -1,5 +1,7 @@
 ## Re-submission
-changed description field in DESCRIPTION file. 
+changed description field in DESCRIPTION file: 
+- removed redundant "for R"
+- Added first sentence to avoid starting with "This package"
 
 ## Test environments
 * local R installation, R 4.0.2

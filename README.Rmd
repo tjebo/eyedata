@@ -24,7 +24,10 @@ Contains open access ophthalmic data sets, curated for the use in R.
 
 ## Installation
 
-Install the development version from https://github.com/tjebo/eyedata with:
+You can install eyedata from [CRAN](https://cran.r-project.org/web/packages/eyedata/index.html) using `install.packages("eye")` 
+
+or you can install the development version from 
+[github](https://github.com/tjebo/eyedata):
 
 ``` r
 # install.packages("devtools")

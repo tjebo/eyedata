@@ -1,6 +1,6 @@
 Package: eyedata
 Title: Open Source Ophthalmic Data Sets Curated for R
-Version: 0.1.0
+Version: 0.1.9000
 Authors@R: c(
     person("Tjebo", "Heeren",
            role = c("aut", "cre"),

@@ -11,11 +11,15 @@ status](https://travis-ci.com/tjebo/eyedata.svg?branch=master)](https://travis-c
 
 Contains open access ophthalmic data sets, curated for the use in R.
 
+eyedata is also a supplement package to the [eye
+package](https://github.com/tjebo/eye) ([eye on
+CRAN](https://cran.r-project.org/web/packages/eye/index.html))
+
 ## Installation
 
 You can install eyedata from
 [CRAN](https://cran.r-project.org/web/packages/eyedata/index.html) using
-`install.packages("eye")`
+`install.packages("eyedata")`
 
 or you can install the development version from
 [github](https://github.com/tjebo/eyedata):
